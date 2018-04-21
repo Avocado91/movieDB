@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header :title='title' v-if='isTrue' />
+    <MoviesList />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import MoviesList from './components/MoviesList.vue'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      hello: 'Hello World',
+      title: 'MovieDB',
+      isTrue: true,
+      status: 'Loading'
+    };
+  },
   components: {
-    HelloWorld
+    MoviesList,
+    Header
   }
 }
 </script>
@@ -22,7 +32,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #fff;
 }
 </style>
