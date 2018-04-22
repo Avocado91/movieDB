@@ -1,26 +1,21 @@
 <template>
   <div id="app">
-    <Header :title='title' v-if='isTrue' />
-    <MoviesList />
+    <Header :title='title' />
+    <router-view />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import MoviesList from './components/MoviesList.vue'
 
 export default {
   name: 'app',
   data() {
     return {
-      hello: 'Hello World',
       title: 'MovieDB',
-      isTrue: true,
-      status: 'Loading'
     };
   },
   components: {
-    MoviesList,
     Header
   }
 }
